@@ -8,7 +8,7 @@ export default `<!DOCTYPE html><html lang="en" data-beasties-container><head>
 </style><link rel="stylesheet" href="styles-I5LFCG6J.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-I5LFCG6J.css"></noscript></head>
   <body><!--nghm-->
     <app-root ng-version="21.0.6" ngh="1" ng-server-context="ssg"><router-outlet></router-outlet><app-armour ngh="0"><div class="content"><p class="loading">Loading…</p></div></app-armour><!----></app-root>
-  <link rel="modulepreload" href="chunk-32YOFLNW.js"><script src="main-A2K6JOEQ.js" type="module"></script>
+  <link rel="modulepreload" href="chunk-32YOFLNW.js"><script src="main-KZ6U4HOP.js" type="module"></script>
 <link rel="modulepreload" href="chunk-ZOGJL3OG.js">
 <link rel="modulepreload" href="chunk-5YMXIVRQ.js">
 
