@@ -25,6 +25,12 @@ export async function parseMarkdown(markdown: string, baseHref = './'): Promise<
     return `![${alt}](${newUrl})`;
   });
 
+  // Rewrite markdown links that start with a leading slash (but are not images)
+  const fixedLinks = fixed.replace(/\[([^\]]+)\]\((\/(?!images\/)[^)]+)\)/g, (_m, text, url) => {
+    const newUrl = joinWithPrefix(prefix, url);
+    return `[${text}](${newUrl})`;
+  });
+
   const html = await marked.parse(fixed);
 
   // Also rewrite any remaining HTML attributes referencing /images/... (e.g. <img src="/images/..">)
