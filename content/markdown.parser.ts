@@ -34,10 +34,23 @@ export async function parseMarkdown(markdown: string, baseHref = './'): Promise<
   const html = await marked.parse(fixedLinks);
 
   // Also rewrite any remaining HTML attributes referencing /images/... (e.g. <img src="/images/..">)
-  const final = html.replace(/(src|href)=("|')\/(images\/[^"']+)("|')/g, (_m, attr, q, url) => {
+  let final = html.replace(/(src|href)=("|')\/(images\/[^"']+)("|')/g, (_m, attr, q, url) => {
     const newUrl = joinWithPrefix(prefix, `/${url}`);
     return `${attr}=${q}${newUrl}${q}`;
   });
+
+  // Rewrite any src/href that still begins with a leading slash but is not already
+  // prefixed with the base href — this catches other absolute links.
+  const prefixNoSlash = prefix.startsWith('/') ? prefix.slice(1) : prefix;
+  try {
+    const attrRegex = new RegExp(`(src|href)=("|')\/((?!${prefixNoSlash}).+?)("|')`, 'g');
+    final = final.replace(attrRegex, (_m, attr, q, url) => {
+      const newUrl = joinWithPrefix(prefix, `/${url}`);
+      return `${attr}=${q}${newUrl}${q}`;
+    });
+  } catch (e) {
+    // If regex construction fails for any reason, leave `final` as-is.
+  }
 
   return final;
 }
