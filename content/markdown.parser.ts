@@ -6,10 +6,22 @@ marked.setOptions({
 });
 
 function joinWithPrefix(prefix: string, url: string) {
-  // remove leading slash from url
-  if (url.startsWith('/')) url = url.slice(1);
-  if (prefix.endsWith('/')) return `${prefix}${url}`;
-  return `${prefix}/${url}`;
+  // normalize url (remove leading slash)
+  const u = url.replace(/^\/+/, '');
+
+  // relative base (./ or ./some/)
+  if (prefix.startsWith('.')) {
+    const p = prefix.endsWith('/') ? prefix : prefix + '/';
+    return `${p}${u}`; // e.g. ./images/foo.png
+  }
+
+  // absolute base (e.g. /RepoName or /RepoName/)
+  let p = prefix;
+  // ensure leading slash
+  if (!p.startsWith('/')) p = '/' + p;
+  // strip trailing slashes
+  p = p.replace(/\/+$/, '');
+  return `${p}/${u}`; // e.g. /RepoName/images/foo.png
 }
 
 export async function parseMarkdown(markdown: string, baseHref = './'): Promise<string> {
