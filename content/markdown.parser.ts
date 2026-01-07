@@ -31,19 +31,12 @@ export async function parseMarkdown(markdown: string, baseHref = './'): Promise<
     prefix = prefix.endsWith('/') ? prefix.slice(0, -1) : prefix;
   }
 
-  // Rewrite markdown image links that start with /images/... to respect baseHref
-  const fixed = markdown.replace(/!\[([^\]]*)\]\((\/images\/[^)]+)\)/g, (_m, alt, url) => {
+  const fixedAll = markdown.replace(/(!?)\[([^\]]*)\]\((\/[^)]+)\)/g, (_m, bang, label, url) => {
     const newUrl = joinWithPrefix(prefix, url);
-    return `![${alt}](${newUrl})`;
+    return `${bang}[${label}](${newUrl})`;
   });
 
-  // Rewrite markdown links that start with a leading slash (but are not images)
-  const fixedLinks = fixed.replace(/\[([^\]]+)\]\((\/(?!images\/)[^)]+)\)/g, (_m, text, url) => {
-    const newUrl = joinWithPrefix(prefix, url);
-    return `[${text}](${newUrl})`;
-  });
-
-  const html = await marked.parse(fixedLinks);
+  const html = await marked.parse(fixedAll);
 
   // Also rewrite any remaining HTML attributes referencing /images/... (e.g. <img src="/images/..">)
   let final = html.replace(/(src|href)=("|')\/(images\/[^"']+)("|')/g, (_m, attr, q, url) => {
