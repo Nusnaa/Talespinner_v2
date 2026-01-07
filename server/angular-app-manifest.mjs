@@ -13,7 +13,7 @@ export default {
   {
     "renderMode": 2,
     "preload": [
-      "chunk-TCARPNO4.js",
+      "chunk-O2QDDAM3.js",
       "chunk-5YMXIVRQ.js"
     ],
     "route": "/Talespinner_v2/overview"
@@ -21,7 +21,7 @@ export default {
   {
     "renderMode": 2,
     "preload": [
-      "chunk-ST5S6EIP.js",
+      "chunk-ZOGJL3OG.js",
       "chunk-5YMXIVRQ.js"
     ],
     "route": "/Talespinner_v2/skills/melee/armour"
@@ -29,10 +29,10 @@ export default {
 ],
   entryPointToBrowserMapping: undefined,
   assets: {
-    'index.csr.html': {size: 685, hash: '1dc0bff429f7dd3f6c827eb3a41d780b940f57cf94fc4ad627bdf5a257606171', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
-    'index.server.html': {size: 1041, hash: '6edcc5f4129f3d6f0282f5b882c972506991fb61fa29a71baeeb91fae2781a3c', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
-    'overview/index.html': {size: 2222, hash: '346d1edf05bee568b60178fb2f7706091d65009d9e63f2970c48ad3be8a41fa0', text: () => import('./assets-chunks/overview_index_html.mjs').then(m => m.default)},
-    'skills/melee/armour/index.html': {size: 1365, hash: '3fdb0597358d2b49e55a07ff0daaaa7309cdd9883fa80e03ef75912fc5e52f02', text: () => import('./assets-chunks/skills_melee_armour_index_html.mjs').then(m => m.default)},
+    'index.csr.html': {size: 685, hash: '0344abe34fbdbaba14b2b06f96a0c4d4fec91d91654fc7155b21b0dc177d44c9', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
+    'index.server.html': {size: 1041, hash: '24322582eb95abaeccd96adeed6281186733ea6ac2d5b15d7ba80e0bf937cade', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
+    'overview/index.html': {size: 2222, hash: 'fc625e788dd822f8ddfcdb59273cabd9f9874fb1c6a37071dda69751e3fc8480', text: () => import('./assets-chunks/overview_index_html.mjs').then(m => m.default)},
+    'skills/melee/armour/index.html': {size: 1365, hash: 'a9d1bab22a73eb89ef55c79c5ce8ef5602fe064e0e82736e711b877ad345bce6', text: () => import('./assets-chunks/skills_melee_armour_index_html.mjs').then(m => m.default)},
     'styles-I5LFCG6J.css': {size: 486, hash: 'ZTCL7/r0pls', text: () => import('./assets-chunks/styles-I5LFCG6J_css.mjs').then(m => m.default)}
   },
 };
