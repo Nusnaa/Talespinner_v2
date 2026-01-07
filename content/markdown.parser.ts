@@ -31,7 +31,7 @@ export async function parseMarkdown(markdown: string, baseHref = './'): Promise<
     return `[${text}](${newUrl})`;
   });
 
-  const html = await marked.parse(fixed);
+  const html = await marked.parse(fixedLinks);
 
   // Also rewrite any remaining HTML attributes referencing /images/... (e.g. <img src="/images/..">)
   const final = html.replace(/(src|href)=("|')\/(images\/[^"']+)("|')/g, (_m, attr, q, url) => {
