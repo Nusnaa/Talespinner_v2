@@ -1,7 +1,7 @@
-<!DOCTYPE html><html lang="en" data-beasties-container><head>
+export default `<!DOCTYPE html><html lang="en" data-beasties-container><head>
     <meta charset="utf-8">
     <title>TalespinnerV2</title>
-    <base href="/Talespinner/">
+    <base href="/Talespinner_v2/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.png">
   <style>.content p{display:inline-flex;align-items:center;gap:.6rem;margin:0 1rem .5rem 0;vertical-align:middle;flex-direction:column}@media(max-width:600px){.content p{display:flex;flex-direction:row;width:100%;margin-right:0}}body{background:#f6f7fb;color:#222}.content{padding:1rem}.loading{color:#666;font-style:italic}
@@ -13,4 +13,4 @@
 <link rel="modulepreload" href="chunk-5YMXIVRQ.js">
 
 
-<script id="ng-state" type="application/json">{"__nghData__":[{},{"c":{"0":[{"i":"c2321972705","r":1}]}}]}</script></body></html>
+<script id="ng-state" type="application/json">{"__nghData__":[{},{"c":{"0":[{"i":"c2321972705","r":1}]}}]}</script></body></html>`;

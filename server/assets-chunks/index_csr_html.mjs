@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+export default `<!DOCTYPE html>
 <html lang="en" data-beasties-container="">
   <head>
     <meta charset="utf-8">
     <title>TalespinnerV2</title>
-    <base href="/Talespinner/">
+    <base href="/Talespinner_v2/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.png">
   <style>body{background:#f6f7fb;color:#222}</style><link rel="stylesheet" href="styles-I5LFCG6J.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-I5LFCG6J.css"></noscript></head>
@@ -11,3 +11,4 @@
     <app-root></app-root>
   <link rel="modulepreload" href="chunk-32YOFLNW.js"><script src="main-YMQLHPJP.js" type="module"></script></body>
 </html>
+`;
