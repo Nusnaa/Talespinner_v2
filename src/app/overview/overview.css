@@ -1,0 +1,36 @@
+.content p {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 1rem 0.5rem 0;
+  vertical-align: middle;
+}
+
+.content p img {
+  width: 120px !important;    /* adjust to your desired width */
+  height: 80px;    /* adjust to your desired height */
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
+}
+
+/* Tidy headings and overall spacing */
+.content h1,
+.content h2 {
+  margin: 0.8rem 0 0.4rem;
+}
+
+/* Responsive: stack items on narrow screens */
+@media (max-width: 600px) {
+  .content p {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .content p img {
+    width: 96px;
+    height: 64px;
+  }
+}

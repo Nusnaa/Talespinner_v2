@@ -9,7 +9,7 @@
     ]
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts", "src/**/*.md"
   ],
   "exclude": [
     "src/**/*.spec.ts"
